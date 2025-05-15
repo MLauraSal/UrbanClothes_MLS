@@ -1,0 +1,808 @@
+/*-----------------------------------*\
+    ***************#HEADER*****************
+    \*-----------------------------------*/
+
+.header-top {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cultured);
+}
+
+.header-social-container,
+.header-top-actions,
+.desktop-navigation-menu {
+  display: none;
+}
+
+.slider-1-container {
+  width: 100%;
+
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: url(../img/banner/modern-sport-composition-with-runner-elements.jpg);
+}
+
+.slider-1 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-1 {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  font-size: 15px;
+}
+
+/*header main*/
+.header-main {
+  line-height: 80px;
+}
+
+.header-main :where(.wrap, .menu-bar > a),
+.list-inline > ul {
+  display: flex;
+
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  flex-grow: 1;
+}
+
+.header-center {
+  display: flex;
+
+  flex-grow: 1;
+}
+
+.header-center .branding {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-inline a {
+  position: relative;
+  font-size: 24px;
+  font-weight: var(--weight-500);
+  color: var(--eerie-black);
+  padding: 0 10px;
+  line-height: 1;
+  display: flex;
+  transition: var(--transition-timing);
+  cursor: pointer;
+}
+
+.list-inline a:hover {
+  color: var(--dodgerBlue);
+}
+
+.header-right ul {
+  justify-content: flex-end;
+}
+
+.header-left {
+  display: none;
+}
+
+.desktop-navigation-menu {
+  display: none;
+}
+
+/* cart */
+.cartTab {
+  width: 400px;
+  background-color: var(--white);
+  color: var(--eerie-black);
+  border: 1px solid var(--cultured);
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  right: -400px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+body.showCart .cartTab {
+  right: 0;
+}
+
+body.showCart .container {
+  transform: translateX(-250px);
+}
+
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+
+  font-weight: 300;
+  border: 1px solid var(--cultured);
+}
+
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab button {
+  background-color: var(--white);
+  color: var(--dodgerBlue);
+  border: 1px solid var(--dodgerBlue);
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cartTab .btn {
+  justify-content: space-between;
+  gap: 10px;
+}
+.cartTab .btn .close {
+  background-color: #eee;
+}
+
+.cartTab .btn .checkOut {
+  border: none;
+  border: 1px solid var(--dodgerBlue);
+}
+.listCart {
+  margin-top: 20px;
+}
+.listCart .item img {
+  width: 100%;
+}
+
+.listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 15px;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.listCart .quantity {
+  display: flex;
+  justify-content: center;
+}
+.listCart .quantity p {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+  color: var(--eerie-black);
+  cursor: pointer;
+}
+.listCart .quantity .minus,
+.plus {
+  width: 20px;
+  border-radius: 5px;
+}
+
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Search */
+
+.search-wrap {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 121;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.search-wrap.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-wrap .search-inner {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+.search-wrap .search-cell {
+  position: absolute;
+
+  top: 50%;
+
+  width: 100%;
+
+  transform: translateY(-50%);
+}
+
+.search-wrap .search-field-holder {
+  width: 50%;
+
+  margin: auto;
+
+  position: relative;
+
+  animation: slideInUp 0.3s;
+}
+
+.search-wrap .main-search-input {
+  width: 100%;
+
+  height: 70px;
+
+  border: 0;
+
+  padding: 0 20px;
+
+  text-transform: uppercase;
+
+  background: transparent;
+
+  font-size: 5px;
+
+  color: #fff;
+
+  border-bottom: 2px solid #898989;
+
+  text-align: center;
+
+  letter-spacing: 1px;
+}
+
+.search-wrap input.form-control,
+.search-wrap input.form-control:focus {
+  background-color: #fff;
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+input.main-search-input::-webkit-input-placeholder {
+  color: #fff;
+
+  font-size: 20px;
+}
+
+input.main-search-input:-moz-placeholder {
+  color: #fff;
+
+  opacity: 1;
+
+  font-size: 25px;
+}
+
+input.main-search-input::-moz-placeholder {
+  color: #fff;
+
+  opacity: 1;
+
+  font-size: 25px;
+}
+
+input.main-search-input:-ms-input-placeholder {
+  color: #fff;
+
+  font-size: 25px;
+}
+
+.search-close {
+  position: absolute;
+
+  top: 50px;
+
+  right: 50px;
+
+  font-size: 30px;
+
+  color: #fff;
+
+  cursor: pointer;
+}
+
+
+/*-----------------------------------*\
+    #RESPONSIVE
+  \*-----------------------------------*/
+
+/*
+* responsive larger than 480px screen
+*/
+
+@media (min-width: 480px) {
+ 
+
+  /**
+           * #HEADER
+           */
+
+  .header-top {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cultured);
+  }
+
+  .header-social-container,
+  .header-top-actions {
+    display: none;
+  }
+
+  .mobile-bottom-navigation {
+    border-top-left-radius: var(--border-radius-md);
+    border-top-right-radius: var(--border-radius-md);
+  }
+}
+
+/**
+     * responsive larger than 570px screen
+     */
+
+@media (min-width: 570px) {
+  /*-- #HEADER --*/
+
+  .header-social-container,
+  .header-top-actions {
+    display: none;
+  }
+}
+
+
+
+/**
+     * responsive larger than 1024px screen
+     */
+
+@media (min-width: 1024px) {
+ 
+
+  /**
+             * #HEADER 
+             */
+
+  .header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-top-actions {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+    /* Formulario del clima */
+  .weather-title {
+    font-size: var(--fs-8);
+    color: var(--dodgerBlue);
+    margin-bottom: 5px;
+    right: 0;
+  }
+
+
+  .weather-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .weather-form input {
+    padding: 3px;
+    font: inherit;
+    border: 1px solid var(--sonic-silver);
+    border-radius: 5px;
+    outline: none;
+    font-size: var(--fs-8);
+  }
+
+  .weather-form button {
+    font-size: var(--fs-8);
+    padding: 5px;
+    background-color: var(--eerie-black);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: var(--transition-timing);
+  }
+
+  .weather-form button:hover {
+    background-color: var(--sonic-silver);
+  }
+
+  
+  .weather-result {
+    font-size: var(--fs-8);
+    text-align: left;
+    color: var(--sonic-silver);
+    margin-top: 10px;
+  }
+
+  .header-social-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+  }
+
+  .social-1,
+  .social-2,
+  .social-3,
+  .social-4,
+  .social-5 {
+    background: hsl(0, 0%, 95%);
+    border-radius: var(--border-radius-sm);
+    color: var(--sonic-silver);
+    transition: var(--transition-timing);
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+    text-align: center;
+    line-height: 37px;
+  }
+
+  .social-1:hover {
+    background: var(--facebook-cl);
+    color: var(--white);
+  }
+
+  .social-2:hover {
+    background: var(--twitter-cl);
+    color: var(--white);
+  }
+
+  .social-3:hover {
+    background: var(--instagram-cl);
+    color: var(--white);
+  }
+
+  .social-4:hover {
+    background: var(--linked_in-cl);
+    color: var(--white);
+  }
+
+  .social-5:hover {
+    background: var(--whatsapp-cl);
+    color: var(--white);
+  }
+
+  .slider-1-container {
+    width: 35%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: url(../img/banner/modern-sport-composition-with-runner-elements.jpg);
+  }
+
+  .slider-1 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide-1 {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    color: var(--white);
+    font-size: 20px;
+  }
+
+  .header-left {
+    display: flex;
+  }
+
+  .header-left .list-inline {
+    display: flex;}
+  .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px; 
+    }
+    .header-right .list-inline{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+    }
+    
+.item-floating {
+  position: absolute;
+  font-size: 10px;
+  font-weight: var(--weight-600);
+  top: -12px;
+  right: 0;
+  background-color: var(--dodgerBlue);
+  color: var(--white);
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+   /**
+       * #CART
+       */
+
+       .cart-countdown {
+        margin-bottom: 68px;
+      }
+    
+      .cart-countdown p {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    
+      .cart-countdown .timer-count {
+        font-size: 20px;
+        line-height: 32px;
+        min-width: 117px;
+      }
+    
+      .page-cart-wrap {
+        display: grid;
+        grid-template: repeat(2, auto)/66% 1fr;
+        column-gap: 3rem;
+      }
+    
+      .cart-item .cart-info .cart-title {
+        font-size: 16px;
+        list-style: 22.4px;
+      }
+    
+      .cart-footer-inner {
+        position: sticky;
+        top: 100px;
+        transition: top 0.3s ease;
+      }
+  .listProduct {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .desktop-navigation-menu {
+    display: block;
+  
+  
+  }
+  
+  .desktop-menu-category-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .desktop-menu-category-list .menu-category:not(:nth-child(2)) {
+    position: relative;
+  }
+  
+  .desktop-menu-category-list .menu-category>.menu-title {
+    position: relative;
+    color: var(--onyx);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    text-transform: uppercase;
+    padding: 15px 0;
+    transition: var(--transition-timing);
+  }
+  
+  .desktop-menu-category-list .menu-category>.menu-title:hover {
+    color: var(--dodgerBlue);
+  }
+  
+  .desktop-menu-category-list .menu-category>.menu-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--dodgerBlue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition-timing);
+  }
+  
+  .desktop-menu-category-list .menu-category>.menu-title:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .dropdown-panel {
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    background: var(--white);
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--cultured);
+    box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1);
+    border-radius: var(--border-radius-md);
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: var(--transition-timing);
+    z-index: 5;
+  }
+  
+  .desktop-menu-category-list .menu-category:hover>.dropdown-panel {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+  
+  .dropdown-panel-list .menu-title a {
+    color: var(--onyx);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dodgerBlue);
+    margin-bottom: 10px;
+  }
+  
+  .panel-list-item a {
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    text-transform: capitalize;
+    transition: var(--transition-timing);
+  }
+  
+  .panel-list-item a:hover {
+    color: var(--dodgerBlue);
+  }
+  
+  .panel-list-item:not(:last-child) a {
+    padding: 4px 0;
+  }
+  
+  .panel-list-item:last-child {
+    margin-top: 20px;
+  }
+  
+  .panel-list-item img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    width: 220px;
+    gap: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--cultured);
+    box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: var(--transition-timing);
+    z-index: 5;
+  }
+  
+  .dropdown-list .menu-title a {
+    color: var(--onyx);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dodgerBlue);
+    margin-bottom: 10px;
+  }
+  
+  .desktop-menu-category-list .menu-category:hover>.dropdown-list {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+  
+  .dropdown-list .dropdown-item a {
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    text-transform: capitalize;
+    padding: 4px 20px;
+    transition: var(--transition-timing);
+  }
+  
+  .dropdown-list .dropdown-item a:hover {
+    color: var(--dodgerBlue);
+  }
+  
+  .mobile-bottom-navigation {
+    display: none;
+  }
+   
+}
+
+/**
+     * responsive larger than 1200px screen
+     */
+
+@media (min-width: 1200px) {
+
+
+  /**
+             * #HEADER
+             */
+
+  .desktop-menu-category-list {
+    gap: 45px;
+  }
+    
+    
+    
+ 
+    
+    
+    
+}
+
