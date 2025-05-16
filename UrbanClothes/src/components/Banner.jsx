@@ -1,5 +1,5 @@
-import ImgSlider from '../assets/img/slider/young-male-model.mp4';
-import '../assets/css/Banner.css';
+
+import '../assets/css/Home.css';
 import '../assets/css/Global.css';
 const Banner = () => {
   return (
@@ -9,7 +9,7 @@ const Banner = () => {
           <div className="slider-item">
           <video autoPlay muted playsInline loop className="banner-img">
 
-              <source src={ImgSlider} />
+              <source src="../../public/assets/img/slider/young-male-model.mp4" />
             </video>
 
             <div className="box-content">

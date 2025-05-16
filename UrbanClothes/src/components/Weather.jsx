@@ -22,15 +22,15 @@ const Weather = () => {
   };
 
   return (
-    <form onSubmit={fetchWeather}>
+    <form className="weather-form " onSubmit={fetchWeather}>
       <input
         type="text"
         placeholder="Ingresa ciudad"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
-      <button type="submit">Consultar clima</button>
-      <p>{weatherInfo}</p>
+      <button type="submit">Consultar</button>
+      <p className='weather-result'>{weatherInfo}</p>
     </form>
   );
 };

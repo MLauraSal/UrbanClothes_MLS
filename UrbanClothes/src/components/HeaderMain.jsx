@@ -1,11 +1,13 @@
 // src/components/Header/HeaderMain.jsx
-import Logo from "../assets/img/logo/3.png";
-import FullscreenSearch from "./FullScreenSearch";
-import { useState } from "react";
 
 
-const HeaderMain = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+import "../assets/css/Global.css";
+import "../assets/css/Cart.css";
+
+const HeaderMain = ({ toggleCart, cartItems = [] }) => {
+ 
+  
   return (
     <>
       <div className="header-main">
@@ -13,7 +15,7 @@ const HeaderMain = () => {
           <div className="wrap">
             <div className="header-left">
               <ul className="list-inline">
-                <li >
+                <li>
                   <a href="#" className="left-item">
                     <ion-icon name="heart-outline"></ion-icon>
                     <span className="item-floating">0</span>
@@ -28,35 +30,32 @@ const HeaderMain = () => {
             </div>
             <div className="header-center">
               <a href="#" className="branding">
-                <img src={Logo} alt="logo" width="150" height="80" />
+                <img src="../../public/assets/img/logo/3.png" alt="logo" width="150" height="80" />
               </a>
             </div>
             <div className="header-right">
               <ul className="list-inline">
                 <li>
-                <button
-                    className="action-btn"
-                    onClick={() => setIsSearchOpen(true)}
-                    style={{ background: 'none', border: 'none' }}
-                  >
-                    <ion-icon name="search-outline" className="search-trigger"></ion-icon>
-                  </button>
+                 <button> <ion-icon
+                    name="search-outline"
+                    className="search-trigger"
+                  ></ion-icon></button>
                 </li>
+            
                 <li>
-                  <a href="#" className="icon-cart">
-                    <ion-icon
-                      name="bag-handle-outline"
-                      className="action-btn"
-                    ></ion-icon>
-                    <span className="item-floating">0</span>
-                  </a>
+                <button className="action-btn icon-cart" onClick={toggleCart}>
+                  <ion-icon name="bag-handle-outline"></ion-icon>
+                  <span className="item-floating">{Array.isArray(cartItems) ? cartItems.length : 0}</span>
+
+                </button>
                 </li>
+                
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <FullscreenSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      
     </>
   );
 };

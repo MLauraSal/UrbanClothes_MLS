@@ -1,11 +1,23 @@
-import React from 'react'
 
-const Shop = () => {
+import products from '../ProductsData';
+
+
+
+export default function Shop(addToCart) {
+
   return (
-    <div>
-      <h1>Shop</h1>
-    </div>
-  )
+    <section className="shop">
+      <h2 className="title">Shop Products</h2>
+      <div className="product-grid">
+        {products.map(product => (
+          <div key={product.id} className="product-card">
+            <img src={product.imageDefault} alt={product.name} />
+            <h4>{product.name}</h4>
+            <p>${product.price}</p>
+            <button onClick={() => addToCart(product)}>Agregar al carrito</button>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
-
-export default Shop

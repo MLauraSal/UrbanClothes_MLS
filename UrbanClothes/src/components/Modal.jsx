@@ -1,6 +1,6 @@
 // src/components/Modal/NewsletterModal.jsx
 import { useEffect, useState } from 'react';
-import Newsletter from '../assets/img/newsletter.png'
+
 import '../assets/css/Modal.css';
 import '../assets/css/Global.css';
 
@@ -24,7 +24,7 @@ const NewsletterModal = () => {
           <ion-icon name="close-outline"></ion-icon>
         </button>
         <div className="newsletter-img">
-          <img src={Newsletter} alt="newsletter" width="400" height="400" />
+          <img src="../../public/assets/img/newsletter.png" alt="newsletter" width="400" height="400" />
         </div>
         <div className="newsletter">
           <form>
