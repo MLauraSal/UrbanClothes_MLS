@@ -1,8 +1,8 @@
-// src/components/Modal/NewsletterModal.jsx
-import { useEffect, useState } from 'react';
 
-import '../assets/css/Modal.css';
-import '../assets/css/Global.css';
+import { useEffect, useState } from 'react';
+import "../assets/css/Modal.css";
+import "../assets/css/Global.css";
+
 
 
 
@@ -33,8 +33,9 @@ const NewsletterModal = () => {
               Subscribe to <b>Urban Clothes</b> for the latest products and discounts.
             </p>
             <input type="email" placeholder="Email Address" required />
-            <button type="submit" className="btn-newsletter">Subscribe</button>
+            
           </form>
+          <button type="submit" className="btn-newsletter">Subscribe</button>
         </div>
       </div>
     </div>

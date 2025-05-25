@@ -1,8 +1,9 @@
 
 import HeaderTop from "./HeaderTop";
 import HeaderMain from "./HeaderMain";
-import NavBar from "./NavBar";
-
+import NavBar from "./Navbar";
+import "../assets/css/Global.css";
+import "../assets/css/Header.css";
 
 const Header =  ({ toggleCart, cartItems })=> {
 

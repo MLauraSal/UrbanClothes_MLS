@@ -1,6 +1,7 @@
-// src/components/Header/FullscreenSearch.jsx
-import { useState, useEffect } from 'react';
 
+import { useState, useEffect } from 'react';
+import "../assets/css/Header.css";
+import "../assets/css/Global.css";
 const FullscreenSearch = () => {
   const [isOpen, setIsOpen] = useState(false);
 

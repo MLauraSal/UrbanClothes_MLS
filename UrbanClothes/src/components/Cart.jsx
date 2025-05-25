@@ -1,12 +1,16 @@
-const Cart = ({
-  isOpen,
-  toggleCart,
-  cartItems,
-  removeFromCart,
-  increaseQuantity,
-  decreaseQuantity,
-  cartTotal
-}) => {
+import "../assets/css/Cart.css";
+import "../assets/css/Global.css";
+import { useCart } from "../hooks/useCart"; 
+
+const Cart = ({ isOpen, toggleCart }) => {
+  const {
+    cartItems,
+    cartTotal,
+    removeFromCart,
+    increaseQuantity,
+    decreaseQuantity
+  } = useCart();
+
   return (
     <div className={`cartTab ${isOpen ? "open" : ""}`}>
       <h1 className="cartTitle">Shopping Cart</h1>
@@ -17,7 +21,7 @@ const Cart = ({
           cartItems.map((item) => (
             <div className="cartItem" key={item.id}>
               <div>
-                <p>{item.name}</p>
+                <p>{item.title}</p>
                 <p>Price: ${item.price * item.quantity}</p>
               </div>
 
@@ -47,6 +51,7 @@ const Cart = ({
           ))
         )}
       </div>
+
       {cartItems.length > 0 && (
         <div className="cartTotal">
           <h3>Total: ${cartTotal.toFixed(2)}</h3>

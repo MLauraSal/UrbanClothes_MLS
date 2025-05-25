@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import MenBanner from "../../public/assets/img/banner/mens-banner.jpg";
-import WomensBanner from "../../public/assets/img/banner/womens-banner.jpg";
 import "../assets/css/Header.css";
 import "../assets/css/Global.css";
-
-
-
+import { useAuth } from "../hooks/useAuth";
 
 export default function Navbar() {
+  const { user } = useAuth();
+
   return (
     <nav className="navbar navbar-expand-lg desktop-navigation-menu">
       <div className="container-fluid d-flex align-items-lg-center">
@@ -28,9 +26,8 @@ export default function Navbar() {
               </Link>
 
               <div className="dropdown-panel">
-
-                {/* Men's Fashion */}
-                <ul className="dropdown-panel-list">
+                  {/* Men's Fashion */}
+                  <ul className="dropdown-panel-list">
                   <li className="menu-title">
                     <Link to="/shop">Men's Fashion</Link>
                   </li>
@@ -41,7 +38,7 @@ export default function Navbar() {
                   <li className="panel-list-item"><Link to="/shop/sunglasses">Sunglasses</Link></li>
                   <li className="panel-list-item">
                     <Link to="/shop">
-                      <img src={MenBanner} alt="men's fashion" width="250" height="119" />
+                      <img src="../../public/assets/img/banner/mens-banner.jpg" alt="men's fashion" width="250" height="119" />
                     </Link>
                   </li>
                 </ul>
@@ -58,15 +55,14 @@ export default function Navbar() {
                   <li className="panel-list-item"><Link to="/shop/bags">Bags</Link></li>
                   <li className="panel-list-item">
                     <Link to="/shop">
-                      <img src={WomensBanner}alt="women's fashion" width="250" height="119" />
+                      <img src="../../public/assets/img/banner/womens-banner.jpg"alt="women's fashion" width="250" height="119" />
                     </Link>
                   </li>
                 </ul>
-
               </div>
             </li>
 
-            {/* PAGES */}
+           
             <li className="nav-item dropdown menu-category">
               <Link to="#" className="nav-link dropdown-toggle menu-title" data-bs-toggle="dropdown" aria-expanded="false">
                 Pages
@@ -74,25 +70,38 @@ export default function Navbar() {
               <ul className="dropdown-list">
                 <li className="dropdown-item"><Link to="/about">About</Link></li>
                 <li className="dropdown-item"><Link to="/faqs">FAQs</Link></li>
-                <li className="dropdown-item"><Link to="/login">Login</Link></li>
+                {!user && (
+                  <li className="dropdown-item"><Link to="/login">Login</Link></li>
+                )}
                 <li className="dropdown-item"><Link to="/contact">Contact</Link></li>
+                <li className="dropdown-item"><Link to="/shop">Shopping</Link></li>
+                {user?.role === "admin" && (
+                  <li className="dropdown-item"><Link to="/dashboard">Dashboard</Link></li>
+                )}
               </ul>
             </li>
 
-            {/* CART */}
+           
             <li className="nav-item menu-category">
-              <Link to="/cart" className="nav-link menu-title">Shopping Cart</Link>
+              <Link to="/shop" className="nav-link menu-title">Products</Link>
             </li>
 
-            {/* BLOG */}
+            
             <li className="nav-item menu-category">
               <a href="#section-blog" className="nav-link menu-title">Blog</a>
             </li>
 
-            {/* SERVICES */}
+           
             <li className="nav-item menu-category">
               <a href="#services" className="nav-link menu-title">Services</a>
             </li>
+
+            
+            {!user && (
+              <li className="nav-item menu-category">
+                <Link to="/login" className="nav-link menu-title">Login</Link>
+              </li>
+            )}
 
           </ul>
         </div>
@@ -101,8 +110,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
-   
-    
-

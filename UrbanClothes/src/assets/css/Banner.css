@@ -339,3 +339,30 @@
     
     
     }    
+
+/*
+  responsive larger than 1400px screen
+  */
+
+  @media (min-width: 1400px) {
+  /* #BANNER */
+  
+  
+    .slider-item .box-content h1 {
+       font-size: 36px;
+  
+    }
+  
+    .btn-slider {
+  
+      padding: 18px 28px;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  }

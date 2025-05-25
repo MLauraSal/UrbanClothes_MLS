@@ -1,6 +1,6 @@
+import "../assets/css/Global.css";
+import "../assets/css/Banner.css";
 
-import '../assets/css/Home.css';
-import '../assets/css/Global.css';
 const Banner = () => {
   return (
     <>

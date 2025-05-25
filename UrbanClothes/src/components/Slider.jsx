@@ -1,7 +1,6 @@
-import React, { useEffect} from 'react';
+import  { useEffect} from 'react';
 
-import "../assets/css/Global.css";
-import "../assets/css/Header.css";
+
 
 const Slider = () => {
   useEffect(() => {

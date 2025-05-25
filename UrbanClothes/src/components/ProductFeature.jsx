@@ -1,29 +1,56 @@
-import React from 'react'
 
-import '../assets/css/Home.css'
-import '../assets/css/Global.css'
+import "../assets/css/Global.css";
+import "../assets/css/ProductsFeatures.css";
 
-
-
-const ProductFeature = ({ featuredProducts }) => {
+const featuredData = [
+  {
+   
+    
+    imageDefault: "../../public/assets/img/products/shampoo.jpg",
+    name: "shampoo, conditioner & facewash packs",
+    price: 19.99,
+    priceOriginal: 29.99,
+    description: "Nourishing shampoo with natural ingredients. Leaves your hair soft, shiny, and healthy from the first wash. Don’t miss this limited-time offer!",
+  
+  },
+  {
+   
+    name: "Leather Jacket",
+    imageDefault: "../../public/assets/img/products/jewellery-1.jpg",
+    price: 89.99,
+    priceOriginal: 129.99,
+    description: "Elegant and lightweight earrings to elevate any look. Perfect for day or night. Special offer – limited time only!.",
+    
+  },
+  {
+   
+    name: "Running Shoes",
+    imageDefault: "../../public/assets/img/collection-1.jpg",
+    price: 49.99,
+    priceOriginal: 69.99,
+    description: "Lightweight running shoes for maximum performance.",
+  
+  }
+]
+const ProductFeature = () => {
   return (
     <div className='product-feature'>
       <h2 className="title">Deal of the day</h2>
 
-      <div className="showcase-wrapper has-scrollbar">
-        {featuredProducts.map((product) => (
-          <div className="showcase-container" key={product.id}>
-            <div className="showcase">
-              <div className="showcase-banner">
+      <div className="product-feature_wrapper has-scrollbar">
+        {featuredData.map((feature,index) => (
+          <div className="product-feature_container" key={index}>
+            <div className="product-feature_showcase">
+              <div className="product-feature_banner">
                 <img
-                  src={product.imageDefault}
-                  alt={product.name}
+                  src={feature.imageDefault}
+                  alt={feature.name}
                   className="showcase-img"
                 />
               </div>
 
-              <div className="showcase-content">
-                <div className="showcase-rating">
+              <div className="product-feature_content">
+                <div className="product-feature_rating">
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
@@ -32,26 +59,26 @@ const ProductFeature = ({ featuredProducts }) => {
                 </div>
 
                 <a href="#">
-                  <h3 className="showcase-title">{product.name}</h3>
+                  <h3 className="product-feature_title">{feature.name}</h3>
                 </a>
 
-                <p className="showcase-desc">
-                  {product.description || 'Limited-time offer for selected items.'}
+                <p className="product-feature_-desc">
+                  {feature.description || 'Limited-time offer for selected items.'}
                 </p>
 
-                <div className="price-box">
-                  <p className="price">${product.price.toFixed(2)}</p>
-                  <del>${product.priceOriginal.toFixed(2)}</del>
+                <div className="product-feature_price-box">
+                  <p className="product-feature_price">${feature.price}</p>
+                  <del>${feature.priceOriginal}</del>
                 </div>
 
                 <button className="add-cart-btn">Add to cart</button>
 
-                <div className="showcase-status">
+                <div className="product-feature_status">
                   <div className="wrapper">
-                    <p>already sold: <b>{product.sold || 10}</b></p>
-                    <p>available: <b>{product.available || 40}</b></p>
+                    <p>already sold: <b>20</b></p>
+                    <p>available: <b>40</b></p>
                   </div>
-                  <div className="showcase-status-bar"></div>
+                  <div className="product-feature_bar"></div>
                 </div>
 
                 <div className="countdown-box">

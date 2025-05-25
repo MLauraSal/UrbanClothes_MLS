@@ -1,7 +1,5 @@
-// src/components/Category.jsx
+import "../assets/css/Category.css";
 import "../assets/css/Global.css";
-import "../assets/css/Home.css";
-
 
 const categories = [
   { icon: "../../public/assets/img/icons/dress.svg", title: "Dress & frock", amount: 53 },

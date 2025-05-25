@@ -1,7 +1,7 @@
 import Slider from "./Slider.jsx";
 import Weather from "./Weather.jsx";
-import "../assets/css/Global.css";
 import "../assets/css/Header.css";
+import "../assets/css/Global.css";
 
 export default function HeaderTop () {
     return (
