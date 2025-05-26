@@ -6,7 +6,7 @@ const featuredData = [
   {
    
     
-    imageDefault: "../../public/assets/img/shampoo.jpg",
+    imageDefault: "/assets/img/shampoo.jpg",
     name: "shampoo, conditioner & facewash packs",
     price: 19.99,
     priceOriginal: 29.99,
@@ -16,7 +16,7 @@ const featuredData = [
   {
    
     name: "Leather Jacket",
-    imageDefault: "../../public/assets/img/jewellery-1.jpg",
+    imageDefault: "/assets/img/jewellery-1.jpg",
     price: 89.99,
     priceOriginal: 129.99,
     description: "Elegant and lightweight earrings to elevate any look. Perfect for day or night. Special offer – limited time only!.",
@@ -25,7 +25,7 @@ const featuredData = [
   {
    
     name: "Running Shoes",
-    imageDefault: "../../public/assets/img/collection-1.jpg",
+    imageDefault: "/assets/img/collection-1.jpg",
     price: 49.99,
     priceOriginal: 69.99,
     description: "Lightweight running shoes for maximum performance.",

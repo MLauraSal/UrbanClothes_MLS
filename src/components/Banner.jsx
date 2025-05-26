@@ -9,7 +9,7 @@ const Banner = () => {
           <div className="slider-item">
           <video autoPlay muted playsInline loop className="banner-img">
 
-              <source src="../../public/assets/img/slider/young-male-model.mp4" />
+              <source src="/assets/img/slider/young-male-model.mp4"/>
             </video>
 
             <div className="box-content">

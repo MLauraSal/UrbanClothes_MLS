@@ -87,7 +87,7 @@ const HeaderMain = ({ toggleCart }) => {
             <div className="header-center">
               <a href="#" className="branding">
                 <img
-                  src="../../public/assets/img/logo/3.png"
+                  src="/assets/img/logo/3.png"
                   alt="logo"
                   width="150"
                   height="80"

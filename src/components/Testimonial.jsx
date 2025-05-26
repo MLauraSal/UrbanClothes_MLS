@@ -13,7 +13,7 @@ const Testimonial = () => {
 
           <div className="testimonial-card">
             <img
-              src="./assets/img/testimonial-1.jpg"
+              src="/assets/img/testimonial-1.jpg"
               alt="alan doe"
               className="testimonial-banner"
               width="80"
@@ -25,7 +25,7 @@ const Testimonial = () => {
             <p className="testimonial-title">CEO & Founder Invision</p>
 
             <img
-              src="./assets/img/icons/quotes.svg"
+              src="/assets/img/quotes.svg"
               alt="quotation"
               className="quotation-img"
               width="26"
@@ -42,7 +42,7 @@ const Testimonial = () => {
 
         <div className="cta-container">
           <img
-            src="./assets/img/banner/cta-banner.jpg"
+            src="/assets/img/banner/cta-banner.jpg"
             alt="summer collection"
             className="cta-banner"
           />

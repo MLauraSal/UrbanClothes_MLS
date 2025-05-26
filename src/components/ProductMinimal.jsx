@@ -1,6 +1,7 @@
 import "../assets/css/ProductsMinimal.css";
 import "../assets/css/Global.css";
 import { useProducts } from '../hooks/useProducts';
+import { Link } from 'react-router-dom';
 
 const ProductMinimal = () => {
   const { products } = useProducts();
@@ -24,9 +25,9 @@ const ProductMinimal = () => {
                 </a>
 
                 <div className="showcase-content">
-                  <a href="#">
-                    <h4 className="showcase-title">{product.title}</h4>
-                  </a>
+                  <Link to={`/product/${product.id}`}>
+                                 <h4 className="showcase-title">{product.title}</h4>
+                               </Link>
                   <a href="#" className="showcase-category">{product.category}</a>
                   <div className="price-box">
                     <p className="price">${product.price}</p>

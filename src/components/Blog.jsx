@@ -11,7 +11,7 @@ const Blog = () => {
            <div className="blog-card">
              <a href="#">
                <img
-                 src="./assets/img/blog/blog-1.jpg"
+                 src="/assets/img/blog/blog-1.jpg"
                  alt="Clothes Retail KPIs 2021 Guide for Clothes Executives"
                  width="300"
                  className="blog-banner"
@@ -37,7 +37,7 @@ const Blog = () => {
            <div className="blog-card">
              <a href="#">
                <img
-                 src="./assets/img/blog/blog-2.jpg"
+                 src="/assets/img/blog/blog-2.jpg"
                  alt="Curbside fashion Trends: How to Win the Pickup Battle."
                  className="blog-banner"
                  width="300"
@@ -62,7 +62,7 @@ const Blog = () => {
            <div className="blog-card">
              <a href="#">
                <img
-                 src="./assets/img/blog/blog-3.jpg"
+                 src="/assets/img/blog/blog-3.jpg"
                  alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
                  className="blog-banner"
                  width="300"
@@ -87,7 +87,7 @@ const Blog = () => {
            <div className="blog-card">
              <a href="#">
                <img
-                 src="./assets/img/blog/blog-4.jpg"
+                 src="/assets/img/blog/blog-4.jpg"
                  alt="Curbside fashion Trends: How to Win the Pickup Battle."
                  className="blog-banner"
                  width="300"

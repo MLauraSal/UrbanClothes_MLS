@@ -24,7 +24,7 @@ const NewsletterModal = () => {
           <ion-icon name="close-outline"></ion-icon>
         </button>
         <div className="newsletter-img">
-          <img src="../../public/assets/img/newsletter.png" alt="newsletter" width="400" height="400" />
+          <img src="/assets/img/newsletter.png" alt="newsletter" width="400" height="400" />
         </div>
         <div className="newsletter">
           <form>

@@ -1,6 +1,7 @@
 import '../assets/css/Sidebar.css';
 import '../assets/css/Global.css';
 import { useProducts } from '../hooks/useProducts';
+import { Link } from 'react-router-dom';
 
 const ProductShowcase = ({ title, compact = false }) => {
   const { products } = useProducts();
@@ -24,9 +25,9 @@ const ProductShowcase = ({ title, compact = false }) => {
            </a>
 
            <div className="showcase-content">
-             <a href="#">
-               <h4 className="showcase-title">{product.title}</h4>
-             </a>
+           <Link to={`/product/${product.id}`}>
+                        <h3 className="showcase-title">{product.title}</h3>
+                      </Link>
 
              {product.rating && (
                <div className="showcase-rating">

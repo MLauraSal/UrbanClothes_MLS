@@ -5,30 +5,25 @@ import "../assets/css/Global.css";
 import Filter from "../components/Filter.jsx";
 import { useProducts } from "../hooks/useProducts.js";
 import { useCart } from "../hooks/useCart.js";
+import { Link } from 'react-router-dom';
 
 export default function Shop() {
-  
-   const { products } = useProducts();
-    const { addToCart } = useCart(); 
-  
+  const { products } = useProducts();
+  const { addToCart } = useCart();
+
   return (
     <>
       <main>
-      <section className="banner">
-        <div className="banner-container container">
-          <div className="banner-item">
-          <img src="/public/assets/img/banner/1.png" className="banner-img">
-
-              
-            </img>
-
-            
+        <section className="banner">
+          <div className="banner-container container">
+            <div className="banner-item">
+              <img src="/assets/img/banner/1.png" className="banner-img"></img>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
         <div className="product-container">
           <div className="container">
-          <Filter />
+            <Filter />
 
             <div className="product-main">
               <h2 class="title">New Products</h2>
@@ -76,9 +71,9 @@ export default function Shop() {
 
                     <div className="showcase-content">
                       <p className="showcase-category">{product.category}</p>
-                      <a href="#">
+                      <Link to={`/product/${product.id}`}>
                         <h3 className="showcase-title">{product.title}</h3>
-                      </a>
+                      </Link>
 
                       <div class="showcase-rating">
                         <ion-icon name="star"></ion-icon>
@@ -93,7 +88,12 @@ export default function Shop() {
                       </div>
                     </div>
                     <div className="add-box">
-                      <button className="add-button" onClick={() => addToCart(product)}>Add to Cart</button>
+                      <button
+                        className="add-button"
+                        onClick={() => addToCart(product)}
+                      >
+                        Add to Cart
+                      </button>
                     </div>
                   </div>
                 ))}

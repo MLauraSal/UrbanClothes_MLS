@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import Swal from 'sweetalert2';
+import '../assets/css/Login.css';
+import '../assets/css/Global.css'
 
 const Login = () => {
   const { login } = useAuth();
@@ -25,7 +27,7 @@ const Login = () => {
     if (username === "admin" && password === "admin1234") {
       fakeUser = {
         username: "admin",
-        profilePic: "/assets/img/user-default.jpg",
+        profilePic: "/assets/img/avatar/user-default.jpg",
         role: "admin",
       };
     } else {
@@ -55,13 +57,12 @@ const Login = () => {
   };
   
   return (
-    <div className="wrapper">
+   <div className="body_container">
+     <div className="wrapper">
       <div className="form-box">
         <form className="container login-container" onSubmit={handleSubmit}>
           <div className="top">
-            <div className="login-logo">
-              <img src="/assets/img/Logo-removebg-preview.png" alt="Logo" />
-            </div>
+           
             <h1>Bienvenido</h1>
             <h2 className="form-title">Login</h2>
             <span>
@@ -109,6 +110,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

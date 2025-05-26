@@ -38,7 +38,7 @@ export default function Navbar() {
                   <li className="panel-list-item"><Link to="/shop/sunglasses">Sunglasses</Link></li>
                   <li className="panel-list-item">
                     <Link to="/shop">
-                      <img src="../../public/assets/img/banner/mens-banner.jpg" alt="men's fashion" width="250" height="119" />
+                      <img src="/assets/img/banner/mens-banner.jpg" alt="men's fashion" width="250" height="119" />
                     </Link>
                   </li>
                 </ul>
@@ -55,7 +55,7 @@ export default function Navbar() {
                   <li className="panel-list-item"><Link to="/shop/bags">Bags</Link></li>
                   <li className="panel-list-item">
                     <Link to="/shop">
-                      <img src="../../public/assets/img/banner/womens-banner.jpg"alt="women's fashion" width="250" height="119" />
+                      <img src="/assets/img/banner/womens-banner.jpg"alt="women's fashion" width="250" height="119" />
                     </Link>
                   </li>
                 </ul>

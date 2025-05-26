@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import '../assets/css/Login.css';
+import '../assets/css/Global.css'
+
 const Register = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -48,13 +51,12 @@ const Register = () => {
   };
 
   return (
-    <div className="wrapper">
+   <div className="body_container">
+     <div className="wrapper">
       <div className="form-box">
         <form className="register-container" onSubmit={handleSubmit}>
           <div className="top">
-            <div className="login-logo">
-              <img src="/assets/img/Logo-removebg-preview.png" alt="Logo" />
-            </div>
+          
             <h1 className="form-title">Register</h1>
             <span>
               You have an account? <a href="/login">Sign in</a>
@@ -133,6 +135,7 @@ const Register = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

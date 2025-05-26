@@ -1,16 +1,17 @@
 // src/components/ProductGrid.jsx
-import React from 'react';
-import { useProducts } from '../hooks/useProducts.js';
-import { useCart } from '../hooks/useCart.js'; 
+import React from "react";
+import { useProducts } from "../hooks/useProducts.js";
+import { useCart } from "../hooks/useCart.js";
+import { Link } from 'react-router-dom';
 import "../assets/css/ProductsGrid.css";
 import "../assets/css/Global.css";
 
 const ProductGrid = () => {
   const { products } = useProducts();
-  const { addToCart } = useCart(); 
+  const { addToCart } = useCart();
 
   return (
-    <div className='product-main'>
+    <div className="product-main">
       <h2 className="title">New Products</h2>
       <div className="product-grid">
         {products.map((product) => (
@@ -23,27 +24,42 @@ const ProductGrid = () => {
                 width="70"
               />
               <p className="showcase-badge">15%</p>
-              <div className='showcase-actions'>
+              <div className="showcase-actions">
                 <button>
-                  <ion-icon name="heart-outline" className="btn-action"></ion-icon>
+                  <ion-icon
+                    name="heart-outline"
+                    className="btn-action"
+                  ></ion-icon>
                 </button>
                 <button>
-                  <ion-icon name="eye-outline" className="btn-action"></ion-icon>
+                <Link to={`/product/${product.id}`}>
+                <ion-icon
+                    name="eye-outline"
+                    className="btn-action"
+                  ></ion-icon>
+                      </Link>
+                  
                 </button>
                 <button>
-                  <ion-icon name="repeat-outline" className="btn-action"></ion-icon>
+                  <ion-icon
+                    name="repeat-outline"
+                    className="btn-action"
+                  ></ion-icon>
                 </button>
                 <button onClick={() => addToCart(product)}>
-                  <ion-icon name="bag-handle-outline" className="btn-action"></ion-icon>
+                  <ion-icon
+                    name="bag-handle-outline"
+                    className="btn-action"
+                  ></ion-icon>
                 </button>
               </div>
             </div>
 
             <div className="showcase-content">
               <p className="showcase-category">{product.category}</p>
-              <a href="#">
+              <Link to={`/product/${product.id}`}>
                 <h3 className="showcase-title">{product.title}</h3>
-              </a>
+              </Link>
               <div className="showcase-rating">
                 <ion-icon name="star"></ion-icon>
                 <ion-icon name="star"></ion-icon>
@@ -56,7 +72,9 @@ const ProductGrid = () => {
               </div>
             </div>
             <div className="add-box">
-              <button className="add-button" onClick={() => addToCart(product)}>Add to Cart</button>
+              <button className="add-button" onClick={() => addToCart(product)}>
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}

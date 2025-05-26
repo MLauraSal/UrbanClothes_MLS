@@ -1,63 +1,50 @@
 // src/pages/Dashboard.jsx
-import { useState, useEffect } from 'react';
-import { useAuth } from '../hooks/useAuth';
+import { useState } from "react";
+import UsersTable from "../components/UsersTable";
+import ProductsTable from "../components/ProductsTable";
+import "../assets/css/Dashboard.css"; 
+import "../assets/css/Global.css";
 
-import { getUsers } from '../Services/userService';
-import { getAllProducts } from '../Services/fakeApi';
 
 const Dashboard = () => {
-  const { user } = useAuth();
- 
-  const [users, setUsers] = useState([]);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    setUsers(getUsers()); 
-    getAllProducts().then(setProducts); 
-  }, []);
+  const [activeTab, setActiveTab] = useState("users");
 
   return (
-    <div className="dashboard">
-      <h2>DashBoard </h2>
-
-      <section>
-        <h3>Usuarios</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Rol</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((u, i) => (
-              <tr key={i}>
-                <td>{user.username}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.rol}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-
-      <section>
-        <h3>Productos</h3>
-        <div className="product-grid">
-          {products.map(product => (
-            <div key={product.id} className="product-card">
-              <img src={product.image} alt={product.title} width={100} />
-              <h4>{product.title}</h4>
-              <p>${product.price}</p>
-            </div>
-          ))}
+   <main className="main-container container">
+     <div className="content">
+      <div className="row">
+        <div className="col-md-12">
+          <h1>Panel de Administración</h1>
+          <h2>Gestión de Usuarios y Productos</h2>
         </div>
-      </section>
+      </div>
+
+      <div className="tabs-container ">
+        <div role="tablist" className="manual">
+          <button type="button" role="tab" 
+            className={activeTab === "users" ? "active" : ""}
+            onClick={() => setActiveTab("users")}
+          >
+            <span className="focus">Usuarios</span>
+          </button>
+          <button type="button" role="tab" tabindex="-1"
+            className={activeTab === "products" ? "active" : ""}
+            onClick={() => setActiveTab("products")}
+          >
+            <span className="focus">Productos</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        {activeTab === "users" && <UsersTable />}
+        {activeTab === "products" && <ProductsTable />}
+      </div>
     </div>
+   </main>
   );
 };
 
 export default Dashboard;
+
+
